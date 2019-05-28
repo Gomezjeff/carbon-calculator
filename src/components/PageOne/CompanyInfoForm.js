@@ -27,7 +27,9 @@ export default function CompanyInfoForm(props) {
                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: '30%' }}>
                     <label>Annual Turnover (Euro's)</label>
                     <NumericInput 
-                        maxLength={25} 
+                        maxLength={25}
+                        placeholder="Fill in your revenue" 
+                        tipText="Fill in your revenue"
                         prefix="€" 
                         value={props.values.turnover} 
                         onChange={e => props.onChange(e, 'turnover')} 

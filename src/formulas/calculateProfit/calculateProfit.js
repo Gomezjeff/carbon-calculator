@@ -1,5 +1,5 @@
 // Uncomment next to text console.table
-// import { companyInfo, taxScope, taxInfo, emissionsInput } from '../../lib/sampleCompany'
+import { companyInfo, taxScope, taxInfo, emissionsInput } from '../../lib/sampleCompany'
 import { calculateAnnualValues } from '../calculateTax/yearTaxCalculation'
 
 const getYearArray = (years) => {
@@ -188,4 +188,4 @@ export const dataGraphTaxableEmissions = (companyInfo, taxScope, taxInfo, emissi
 // console.table(dataGraphCO2Tax(companyInfo, taxScope, taxInfo, emissionsInput, 5, "totalTax", "cumulativeTax", true))
 // console.table(dataGraphCO2Tax(companyInfo, taxScope, taxInfo, emissionsInput, 5, "totalTax", "cumulativeTax", false))
 // console.table(dataGraphTaxableEmissions(companyInfo, taxScope, taxInfo, emissionsInput, 5, "taxableEmissions", "cumulativeEmissions", true))
-// console.table(dataGraphTaxableEmissions(companyInfo, taxScope, taxInfo, emissionsInput, 5, "taxableEmissions", "cumulativeEmissions", false))
+console.table(dataGraphTaxableEmissions(companyInfo, taxScope, taxInfo, emissionsInput, 5, "taxableEmissions", "cumulativeEmissions", false))

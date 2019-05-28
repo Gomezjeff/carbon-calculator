@@ -59,6 +59,8 @@ export default function OptionsPanel(props) {
                             <label><b>Annual Turnover (Euro's)</b></label>
                             <NumericInput
                                 maxLength={20}
+                                placeholder="Fill in your revenue" 
+                                tipText="Fill in your revenue"
                                 prefix="€"
                                 value={props.values.turnover}
                                 onChange={e => props.onChange(e, 'turnover')}
@@ -136,6 +138,8 @@ export default function OptionsPanel(props) {
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
                                     style={emissionStyle}
+                                    placeholder={`Emissions in tons CO\u2082`}
+                                    tipText="Enter your emissions"
                                     maxLength={25}
                                     value={props.values.S1emissions}
                                     onChange={e => props.onChange(e, 'S1emissions')}
@@ -161,6 +165,8 @@ export default function OptionsPanel(props) {
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
                                     style={emissionStyle}
+                                    placeholder={`Emissions in tons CO\u2082`}
+                                    tipText="Enter your emissions"
                                     maxLength={25}
                                     value={props.values.S2emissions}
                                     onChange={e => props.onChange(e, 'S2emissions')}
@@ -186,6 +192,8 @@ export default function OptionsPanel(props) {
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
                                     style={emissionStyle}
+                                    placeholder={`Emissions in tons CO\u2082`}
+                                    tipText="Enter your emissions"
                                     maxLength={25}
                                     value={props.values.S3emissions}
                                     onChange={e => props.onChange(e, 'S3emissions')}

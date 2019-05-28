@@ -4,11 +4,6 @@ import { Checkbox } from 'antd'
 import TextWithTooltip from '../Utils/TextWithTooltip'
 
 export default function TaxOptions(props) {
-    const growthValues = []
-    for (let i = 0.5; i <= 6.5; i += 0.5) {
-        growthValues.push(i)
-    }
-
     return (
         <div className="tax-options">
             <div>
@@ -27,13 +22,14 @@ export default function TaxOptions(props) {
                 />
             </div>
             <div className="tax-growth-container">
-                <p>Taxable emissions</p>
+                <TextWithTooltip topic='taxableEmissions' />
                 <Checkbox.Group
                     options={['Scope 1', 'Scope 2', 'Scope 3']}
                     onChange={e => props.onCheckboxChange(e, 'checked')}
                     value={props.values.checked}
                 />
             </div>
+
         </div>
     )
 }

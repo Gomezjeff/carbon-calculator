@@ -1,13 +1,11 @@
 import React from 'react'
-import { Slider, Form, Icon } from 'antd'
+import { Slider, Form } from 'antd'
 import '../Utils/styles.css'
 import TextWithTooltip from '../Utils/TextWithTooltip';
 
 function percFormatter(value) {
     return `${value}%`
 }
-
-
 
 const elasticityMarks = {
     '0': {

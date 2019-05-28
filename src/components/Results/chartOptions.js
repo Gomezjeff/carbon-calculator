@@ -35,7 +35,8 @@ export const options = {
                     value = value.join(',');
                     return value
                 }
-            }
+            },
+            stacked: true
         }]
     }
 }

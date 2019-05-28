@@ -44,7 +44,7 @@ export default class NumericInput extends React.Component {
       const title = value ? (
           <span className="numeric-input-title">{value !== '-' ? formatNumber(value) : '-'}</span>
       ) : (
-          'Input a number'
+          this.props.tipText
       );
       return (
           <Tooltip
@@ -57,7 +57,7 @@ export default class NumericInput extends React.Component {
                   {...this.props}
                   onChange={this.onChange}
                   onBlur={this.onBlur}
-                  placeholder="Input a number"
+                  placeholder={this.props.placeholder}
                   maxLength={this.props.maxLength}
               />
           </Tooltip>
