@@ -12,9 +12,9 @@ export const calculateEmissions = (industry, turnover) => {
     const S3emissions = totalTons * weightS3
 
     const emissions = {
-        S1emissions: S1emissions.toFixed(0),
-        S2emissions: S2emissions.toFixed(0),
-        S3emissions: S3emissions.toFixed(0)
+        S1emissions,
+        S2emissions,
+        S3emissions,
     }
 
     return emissions
