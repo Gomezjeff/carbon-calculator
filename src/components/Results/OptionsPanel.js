@@ -63,7 +63,8 @@ export default function OptionsPanel(props) {
                                 tipText="Fill in your revenue"
                                 prefix="€"
                                 value={props.values.turnover}
-                                onChange={e => props.onChange(e, 'turnover')}
+                                // -- Commented out to prevent erroneous recalculations -- //
+                                // onChange={e => props.onChange(e, 'turnover')}
                             />
                         </Form.Item>
                         <Form.Item>
