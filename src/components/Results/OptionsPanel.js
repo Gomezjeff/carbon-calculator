@@ -65,6 +65,7 @@ export default function OptionsPanel(props) {
                                 value={props.values.turnover}
                                 // -- Commented out to prevent erroneous recalculations -- //
                                 // onChange={e => props.onChange(e, 'turnover')}
+                                disabled
                             />
                         </Form.Item>
                         <Form.Item>

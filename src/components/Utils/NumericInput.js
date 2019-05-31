@@ -55,7 +55,7 @@ export default class NumericInput extends React.Component {
           >
               <Input
                   {...this.props}
-                //   onChange={this.onChange}
+                  onChange={this.onChange}
                   onBlur={this.onBlur}
                   placeholder={this.props.placeholder}
                   maxLength={this.props.maxLength}
