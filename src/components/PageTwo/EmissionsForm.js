@@ -33,7 +33,7 @@ export default function EmissionsForm(props) {
                             ? <NumericInput
                                 maxLength={25}
                                 placeholder={`Emissions in tons CO\u2082`}
-                                tipText="Enter your emissions"
+                                tiptext="Enter your emissions"
                                 value={props.values.S1emissions}
                                 onChange={e => props.onChange(e, 'S1emissions')}
                             />
@@ -59,7 +59,7 @@ export default function EmissionsForm(props) {
                         {props.values.emissionsKnown === 'yes'
                             ? <NumericInput
                                 placeholder={`Emissions in tons CO\u2082`}
-                                tipText="Enter your emissions"
+                                tiptext="Enter your emissions"
                                 maxLength={25}
                                 value={props.values.S2emissions}
                                 onChange={e => props.onChange(e, 'S2emissions')}
@@ -86,7 +86,7 @@ export default function EmissionsForm(props) {
                         {props.values.emissionsKnown === 'yes'
                             ? <NumericInput
                                 placeholder={`Emissions in tons CO\u2082`}
-                                tipText="Enter your emissions"
+                                tiptext="Enter your emissions"
                                 maxLength={25}
                                 value={props.values.S3emissions}
                                 onChange={e => props.onChange(e, 'S3emissions')}

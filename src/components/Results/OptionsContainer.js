@@ -6,11 +6,13 @@ import { calculateEmissions } from '../../formulas/calculateEmissions/calculateE
 
 class OptionsContainer extends Component {
     onChange = (data, target) => {
-        this.props.updateInput({ [target]: data })
-        
-        if(this.props.emissionsKnown === 'no') {
-            this.props.updateInput(calculateEmissions(this.props.industry, this.props.turnover))
-        }
+        const update = async function() {
+            await this.props.updateInput({ [target]: data })
+            if (this.props.emissionsKnown === 'no') {
+                this.props.updateInput(calculateEmissions(this.props.industry, this.props.turnover))
+            }
+        }.bind(this)
+        update()
     }
 
     onEmissionsKnownChange = (e) => {

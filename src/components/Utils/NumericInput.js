@@ -44,7 +44,7 @@ export default class NumericInput extends React.Component {
       const title = value ? (
           <span className="numeric-input-title">{value !== '-' ? formatNumber(value) : '-'}</span>
       ) : (
-          this.props.tipText
+          this.props.tiptext
       );
       return (
           <Tooltip
