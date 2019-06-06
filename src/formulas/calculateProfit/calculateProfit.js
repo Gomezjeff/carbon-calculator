@@ -164,6 +164,7 @@ export const dataGraphProfitNT = (companyInfo, years, profit, cumulative, isCumu
 
 export const dataGraphProfitAT = (companyInfo, taxScope, taxInfo, emissionsInput, years, profit, cumulative, isCumulative) => {
     if (!companyInfo.turnover) return []
+    // some function to modify emissions with turnover growth
     taxInfo.euroPerTon = parseInt(taxInfo.euroPerTon)
     const profitTable = calculateProfitWithTaxes(companyInfo, taxScope, taxInfo, emissionsInput, years, isCumulative)
     const graphData = createArrays(profitTable, profit, cumulative, years, isCumulative)
@@ -172,6 +173,7 @@ export const dataGraphProfitAT = (companyInfo, taxScope, taxInfo, emissionsInput
 
 export const dataGraphCO2Tax = (companyInfo, taxScope, taxInfo, emissionsInput, years, profit, cumulative, isCumulative) => {
     if (!companyInfo.turnover) return []
+    console.log(emissionsInput)
     const profitTable = calculateProfitWithTaxes(companyInfo, taxScope, taxInfo, emissionsInput, years, isCumulative)
     const graphData = createArrays(profitTable, profit, cumulative, years, isCumulative)
 
@@ -179,6 +181,7 @@ export const dataGraphCO2Tax = (companyInfo, taxScope, taxInfo, emissionsInput, 
 }
 
 export const dataGraphTaxableEmissions = (companyInfo, taxScope, taxInfo, emissionsInput, years, nameProfit, nameCumulative, isCumulative) => {
+    // some function to modify emissions with turnover growth
     const profitTable = calculateProfitWithTaxes(companyInfo, taxScope, taxInfo, emissionsInput, years, isCumulative)
     const graphData = createArrays(profitTable, nameProfit, nameCumulative, years, isCumulative)
 
