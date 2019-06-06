@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TextWithTooltip from '../Utils/TextWithTooltip'
 import {Line} from 'react-chartjs-2'
-import {optionsEuro} from './chartOptions'
+import {optionsEuro} from '../../lib/chartOptions'
 import {dataGraphCO2Tax} from '../../formulas/calculateProfit/calculateProfit'
 
 export default class SubchartOne extends Component {

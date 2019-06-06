@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Line} from 'react-chartjs-2'
-import {optionsEuro} from './chartOptions'
+import {optionsEuro} from '../../lib/chartOptions'
 import {dataGraphProfitNT, dataGraphProfitAT} from '../../formulas/calculateProfit/calculateProfit'
 import TextWithTooltip from '../Utils/TextWithTooltip'
 import '../Utils/styles.css'

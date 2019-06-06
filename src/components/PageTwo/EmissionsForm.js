@@ -2,8 +2,6 @@ import React from 'react'
 import { Select } from 'antd'
 import NumericInput from '../Utils/NumericInput'
 import TextWithTooltip from '../Utils/TextWithTooltip';
-import './EmissionsContainer.css'
-import '../Utils/styles.css'
 
 const Option = Select.Option
 
@@ -31,7 +29,7 @@ export default function EmissionsForm(props) {
                     <td>
                         {props.values.emissionsKnown === 'yes'
                             ? <NumericInput
-                                maxLength={25}
+                                maxLength={15}
                                 placeholder={`Emissions in tons CO\u2082`}
                                 tiptext="Enter your emissions"
                                 value={props.values.S1emissions}
@@ -60,7 +58,7 @@ export default function EmissionsForm(props) {
                             ? <NumericInput
                                 placeholder={`Emissions in tons CO\u2082`}
                                 tiptext="Enter your emissions"
-                                maxLength={25}
+                                maxLength={15}
                                 value={props.values.S2emissions}
                                 onChange={e => props.onChange(e, 'S2emissions')}
                             />
@@ -87,7 +85,7 @@ export default function EmissionsForm(props) {
                             ? <NumericInput
                                 placeholder={`Emissions in tons CO\u2082`}
                                 tiptext="Enter your emissions"
-                                maxLength={25}
+                                maxLength={15}
                                 value={props.values.S3emissions}
                                 onChange={e => props.onChange(e, 'S3emissions')}
                             />

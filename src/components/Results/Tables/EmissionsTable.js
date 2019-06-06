@@ -1,7 +1,7 @@
 import React from 'react'
-import {dataGraphTaxableEmissions} from '../../../formulas/calculateProfit/calculateProfit'
-import './tables.css'
-import {addCommas} from '../../Utils/addCommas'
+import { dataGraphTaxableEmissions } from '../../../formulas/calculateProfit/calculateProfit'
+import { addCommas } from '../../Utils/addCommas'
+import './style.css'
 
 export default function TaxperyearTable(props) {
     const scope1 = dataGraphTaxableEmissions(
@@ -38,7 +38,7 @@ export default function TaxperyearTable(props) {
     )
 
     return (
-        <table class="chart-table">
+        <table className="chart-table">
             <thead>
                 <tr>
                     <th></th>

@@ -5,10 +5,6 @@ import NumericInput from '../Utils/NumericInput'
 
 const Option = Select.Option
 
-function percFormatter(value) {
-    return `${value}%`
-}
-
 export default function CompanyInfoForm(props) {
     return (
         <div className="form-container">
@@ -41,7 +37,7 @@ export default function CompanyInfoForm(props) {
                         style={{ width: '250px' }}
                         value={props.values.turnoverGrowth} 
                         onChange={e => props.onChange(e, 'turnoverGrowth')}
-                        tipFormatter={percFormatter} 
+                        tipFormatter={val => `${val}%`} 
                         min={0}
                         max={200}
                         marks={{ 0: '0%', 200: '200%' }}
@@ -54,7 +50,7 @@ export default function CompanyInfoForm(props) {
                     <Slider
                         value={props.values.profitMargin} 
                         onChange={e => props.onChange(e, 'profitMargin')}
-                        tipFormatter={percFormatter} 
+                        tipFormatter={val => `${val}%`} 
                         marks={{ 0: '0%', 100: '100%' }}
                     />
                 </Form.Item>

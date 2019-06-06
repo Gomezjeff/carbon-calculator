@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import './InfoContainer.css'
-import CompanyInfoForm from './CompanyInfoForm'
-import MarketInfoForm from './MarketInfoForm'
 import { message } from 'antd'
 import { connect } from 'react-redux';
+import CompanyInfoForm from './CompanyInfoForm'
+import MarketInfoForm from './MarketInfoForm'
 import { submitInputOne } from '../../actions/input'
 import PageHeader from '../PageHeader'
+import './style.css'
 
 class InfoContainer extends Component {
     state = this.props.pageOneInput

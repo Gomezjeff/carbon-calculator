@@ -6,12 +6,14 @@ import { calculateEmissions } from '../../formulas/calculateEmissions/calculateE
 
 class OptionsContainer extends Component {
     onChange = (data, target) => {
+        // This needs to be asynchronous because the emissions need to be updated before a re-render is triggered.
         const update = async function() {
             await this.props.updateInput({ [target]: data })
             if (this.props.emissionsKnown === 'no') {
                 this.props.updateInput(calculateEmissions(this.props.industry, this.props.turnover))
             }
         }.bind(this)
+
         update()
     }
 

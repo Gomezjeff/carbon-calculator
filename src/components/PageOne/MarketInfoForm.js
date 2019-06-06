@@ -1,30 +1,7 @@
 import React from 'react'
 import { Slider, Form } from 'antd'
-import '../Utils/styles.css'
 import TextWithTooltip from '../Utils/TextWithTooltip';
-
-function percFormatter(value) {
-    return `${value}%`
-}
-
-const elasticityMarks = {
-    '0': {
-        label: 'Customer doesn\'t react to price',
-        style: {
-            fontSize: '80%',
-            width: '100px',
-            transform: 'translate(-40px)'
-        }
-    }, 
-    '-4': {
-        label: 'Customer reacts heavily to price',
-        style: {
-            fontSize: '80%',
-            width: '100px',
-            transform: 'translate(-50px)'
-        }
-    }
-}
+import { elasticityMarks } from '../../lib/styleObjects'
 
 export default function MarketInfoForm(props) {
     return (
@@ -49,7 +26,7 @@ export default function MarketInfoForm(props) {
                         style={{width: '65%'}}
                         value={props.values.taxToCustomer} 
                         onChange={e => props.onChange(e, 'taxToCustomer')}
-                        tipFormatter={percFormatter} 
+                        tipFormatter={val => `${val}%`} 
                         marks={{ 0: '0%', 100: '100%' }}
                     />
                 </Form.Item>
