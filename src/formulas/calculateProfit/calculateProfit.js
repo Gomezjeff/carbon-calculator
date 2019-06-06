@@ -1,5 +1,5 @@
 // Uncomment next to text console.table
-import { companyInfo, taxScope, taxInfo, emissionsInput } from '../../lib/sampleCompany'
+// import { companyInfo, taxScope, taxInfo, emissionsInput } from '../../lib/sampleCompany'
 import { calculateAnnualValues } from '../calculateTax/yearTaxCalculation'
 
 const getYearArray = (years) => {
@@ -193,7 +193,7 @@ export const dataGraphTaxableEmissions = (companyInfo, taxScope, taxInfo, emissi
 }
 
 // To run the following tests, uncomment the first line with imports
-console.table(dataGraphProfitNoReduction(companyInfo, taxScope, taxInfo, emissionsInput, 5, "profitAT", "cumulativeProfitAT", true))
+// console.table(dataGraphProfitNoReduction(companyInfo, taxScope, taxInfo, emissionsInput, 5, "profitAT", "cumulativeProfitAT", true))
 // console.table(dataGraphProfitNT(companyInfo, 5, "profit", "cumulative", true))
 // console.table(dataGraphProfitNT(companyInfo, 5, "profit", "cumulative", false))
 // console.table(dataGraphProfitAT(companyInfo, taxScope, taxInfo, emissionsInput, 5, "profitAT", "cumulativeProfitAT", true))

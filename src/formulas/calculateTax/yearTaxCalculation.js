@@ -89,7 +89,6 @@ const reducedEmissionsCalculator = (emissions, reduction, year, years, turnoverG
         const scope = scopes[i]
         const yearReduction = (year - 1) / (years - 1)
         let scopeEmissions;
-        console.log(isReduced)
         if(reduction[scope] === 0 || !isReduced ) {
             scopeEmissions = values[i] + values[i] * (turnoverGrowth / 100) * yearReduction
         } else {
