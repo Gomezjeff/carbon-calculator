@@ -3,7 +3,8 @@ import {SUBMIT_INPUT_ONE, UPDATE_INPUT} from '../actions/input'
 const initialState = JSON.parse(sessionStorage.getItem('companyInfo')) || {
     elasticity: -1,
     taxToCustomer: 100,
-    turnoverGrowth: 10
+    turnoverGrowth: 10,
+    profitMargin: 0
 }
 
 export default ( state = initialState, action = {} ) => {
