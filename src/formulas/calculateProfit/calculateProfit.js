@@ -135,6 +135,7 @@ const createArrays = (profitTable, varNameDiscrete, varNameCumulative, years, is
     const yearArray = getYearArray(years)
     let profit = []
     let cumulative = []
+    console.log(profitTable, varNameDiscrete, varNameCumulative, years, isCumulative)
 
     yearArray.map(year => {
         if (profitTable[year][varNameDiscrete] < 20 ) {
