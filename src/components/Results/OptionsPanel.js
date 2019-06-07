@@ -4,12 +4,11 @@ import NumericInput from '../Utils/NumericInput'
 import { industry } from '../../lib/industry'
 import TextWithTooltip from '../Utils/TextWithTooltip'
 import { formStyle, collapseStyle, panelStyle, emissionStyle, rtStyle, calcEmissionsButtonStyle} from '../../lib/styleObjects'
-import './Results.css'
 
 const Panel = Collapse.Panel
 const Option = Select.Option
 
-const percs = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+const percs = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
 
 export default function OptionsPanel(props) {
     return (
@@ -102,7 +101,7 @@ export default function OptionsPanel(props) {
                                 <Radio value="no">No</Radio>
                             </Radio.Group>
                         </Form.Item>
-                        <Form.Item>
+                        <Form.Item className="scope-options">
                             <TextWithTooltip topic='scope1Box' />
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
@@ -129,7 +128,7 @@ export default function OptionsPanel(props) {
                         </Form.Item>
                     </Form>
                     <Form style={formStyle} layout='inline'>
-                        <Form.Item>
+                        <Form.Item className="scope-options">
                             <TextWithTooltip topic='scope2Box' />
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
@@ -156,8 +155,9 @@ export default function OptionsPanel(props) {
                         </Form.Item>
                     </Form>
                     <Form style={formStyle} layout="inline">
-                        <Form.Item>
+                        <Form.Item className="scope-options">
                             <TextWithTooltip topic='scope3Box' />
+
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
                                     style={emissionStyle}

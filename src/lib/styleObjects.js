@@ -38,7 +38,6 @@ export const collapseStyle = {
 
 export const formStyle = {
     width: '90%',
-    maxWidth: '400px',
     margin: 'auto',
 }
 
