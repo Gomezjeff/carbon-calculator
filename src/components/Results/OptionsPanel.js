@@ -1,9 +1,9 @@
 import React from 'react'
-import { Collapse, Slider, Select, Form, Button, Radio } from 'antd'
+import { Collapse, Slider, Select, Form, Button, Radio, Tooltip } from 'antd'
 import NumericInput from '../Utils/NumericInput'
 import { industry } from '../../lib/industry'
 import TextWithTooltip from '../Utils/TextWithTooltip'
-import { formStyle, collapseStyle, panelStyle, emissionStyle, rtStyle, calcEmissionsButtonStyle} from '../../lib/styleObjects'
+import { formStyle, collapseStyle, panelStyle, emissionStyle, rtStyle, calcEmissionsButtonStyle } from '../../lib/styleObjects'
 
 const Panel = Collapse.Panel
 const Option = Select.Option
@@ -157,7 +157,6 @@ export default function OptionsPanel(props) {
                     <Form style={formStyle} layout="inline">
                         <Form.Item className="scope-options">
                             <TextWithTooltip topic='scope3Box' />
-
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
                                     style={emissionStyle}
