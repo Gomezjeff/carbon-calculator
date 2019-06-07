@@ -1,5 +1,5 @@
 import React from 'react'
-import { Collapse, Slider, Select, Form, Button, Radio, Tooltip } from 'antd'
+import { Collapse, Slider, Select, Form, Button, Radio, Tooltip, Icon } from 'antd'
 import NumericInput from '../Utils/NumericInput'
 import { industry } from '../../lib/industry'
 import TextWithTooltip from '../Utils/TextWithTooltip'
@@ -125,6 +125,12 @@ export default function OptionsPanel(props) {
                             >
                                 {percs.map(val => <Option value={val} key={val}>{val}%</Option>)}
                             </Select>
+                            <Tooltip
+                                placement="topRight"
+                                title="Indicate here the percentage of emissions you are planning to reduce in 5 years."
+                            >
+                                <Icon type="info-circle" className="tooltip-icon" style={{ marginLeft: '3%' }} />
+                            </Tooltip>
                         </Form.Item>
                     </Form>
                     <Form style={formStyle} layout='inline'>
@@ -152,6 +158,12 @@ export default function OptionsPanel(props) {
                             >
                                 {percs.map(val => <Option value={val} key={val}>{val}%</Option>)}
                             </Select>
+                            <Tooltip
+                                placement="topRight"
+                                title="Indicate here the percentage of emissions you are planning to reduce in 5 years."
+                            >
+                                <Icon type="info-circle" className="tooltip-icon" style={{ marginLeft: '3%' }} />
+                            </Tooltip>
                         </Form.Item>
                     </Form>
                     <Form style={formStyle} layout="inline">
@@ -179,6 +191,12 @@ export default function OptionsPanel(props) {
                             >
                                 {percs.map(val => <Option value={val} key={val}>{val}%</Option>)}
                             </Select>
+                            <Tooltip 
+                                placement="topRight" 
+                                title="Indicate here the percentage of emissions you are planning to reduce in 5 years."
+                            >
+                                <Icon type="info-circle" className="tooltip-icon" style={{ marginLeft: '3%' }}/>
+                            </Tooltip>
                         </Form.Item>
                     </Form>
                 </Panel>

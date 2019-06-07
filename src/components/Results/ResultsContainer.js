@@ -60,7 +60,12 @@ class ResultsContainer extends Component {
                 </div>
                 
                 <div className="chart-container">
-                    <a target="_blank" className="ecochain-cta" href="https://ecochain.com/carbon-tax-calculator/">
+                    <a 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="ecochain-cta" 
+                        href="https://ecochain.com/carbon-tax-calculator/"
+                    >
                         <b>BECOME FUTURE PROOF</b>
                     </a>
                     <Tabs style={{marginTop: '1%'}}>

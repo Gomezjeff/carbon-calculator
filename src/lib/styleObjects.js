@@ -43,12 +43,12 @@ export const formStyle = {
 }
 
 export const emissionStyle = {
-    width: '60%',
-    margin: '5%'
+    width: '55%',
+    margin: '5% 3%'
 }
 
 export const rtStyle = {
-    width: '30%',
+    width: '29%',
 }
 
 export const calcEmissionsButtonStyle = {
