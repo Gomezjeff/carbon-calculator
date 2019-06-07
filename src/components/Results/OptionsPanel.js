@@ -1,44 +1,14 @@
 import React from 'react'
-import { Collapse, Slider, Select, Form, Button, Radio } from 'antd'
+import { Collapse, Slider, Select, Form, Button, Radio, Tooltip, Icon } from 'antd'
 import NumericInput from '../Utils/NumericInput'
 import { industry } from '../../lib/industry'
-import { Link } from 'react-router-dom'
 import TextWithTooltip from '../Utils/TextWithTooltip'
-import './Results.css'
+import { formStyle, collapseStyle, panelStyle, emissionStyle, rtStyle, calcEmissionsButtonStyle } from '../../lib/styleObjects'
 
 const Panel = Collapse.Panel
 const Option = Select.Option
 
-const panelStyle = {
-    background: 'rgba(255, 255, 255, 0.64)',
-    border: '0'
-}
-
-const collapseStyle = {
-    background: 'rgba(255, 255, 255, 0.64)',
-    border: '0',
-    fontSize: '130%',
-    textAlign: 'center',
-    margin: '10px 0',
-    borderRadius: '0'
-}
-
-const formStyle = {
-    width: '90%',
-    maxWidth: '400px',
-    margin: 'auto',
-}
-
-const emissionStyle = {
-    width: '60%',
-    margin: '5%'
-}
-
-const rtStyle = {
-    width: '30%',
-}
-
-const percs = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+const percs = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
 
 export default function OptionsPanel(props) {
     return (
@@ -117,7 +87,7 @@ export default function OptionsPanel(props) {
                 <Panel header={`Change your CO\u2082 emissions`} style={panelStyle}>
                     <TextWithTooltip topic='emissions' className='infoStyle' />
                     <Form style={formStyle} layout="inline">
-                        <Form.Item>
+                        <Form.Item style={{ textAlign: 'center', margin: 'auto' }} className="scope-options">
                             <label>Do you know your emissions?</label>
                             <Radio.Group 
                                 value={props.values.emissionsKnown} 
@@ -131,7 +101,7 @@ export default function OptionsPanel(props) {
                                 <Radio value="no">No</Radio>
                             </Radio.Group>
                         </Form.Item>
-                        <Form.Item>
+                        <Form.Item className="scope-options">
                             <TextWithTooltip topic='scope1Box' />
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
@@ -155,10 +125,16 @@ export default function OptionsPanel(props) {
                             >
                                 {percs.map(val => <Option value={val} key={val}>{val}%</Option>)}
                             </Select>
+                            <Tooltip
+                                placement="topRight"
+                                title="Indicate here the percentage of emissions you are planning to reduce in 5 years."
+                            >
+                                <Icon type="info-circle" className="tooltip-icon" style={{ marginLeft: '3%' }} />
+                            </Tooltip>
                         </Form.Item>
                     </Form>
                     <Form style={formStyle} layout='inline'>
-                        <Form.Item>
+                        <Form.Item className="scope-options">
                             <TextWithTooltip topic='scope2Box' />
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
@@ -182,10 +158,16 @@ export default function OptionsPanel(props) {
                             >
                                 {percs.map(val => <Option value={val} key={val}>{val}%</Option>)}
                             </Select>
+                            <Tooltip
+                                placement="topRight"
+                                title="Indicate here the percentage of emissions you are planning to reduce in 5 years."
+                            >
+                                <Icon type="info-circle" className="tooltip-icon" style={{ marginLeft: '3%' }} />
+                            </Tooltip>
                         </Form.Item>
                     </Form>
                     <Form style={formStyle} layout="inline">
-                        <Form.Item>
+                        <Form.Item className="scope-options">
                             <TextWithTooltip topic='scope3Box' />
                             {props.values.emissionsKnown === 'yes'
                                 ? <NumericInput
@@ -209,24 +191,25 @@ export default function OptionsPanel(props) {
                             >
                                 {percs.map(val => <Option value={val} key={val}>{val}%</Option>)}
                             </Select>
+                            <Tooltip 
+                                placement="topRight" 
+                                title="Indicate here the percentage of emissions you are planning to reduce in 5 years."
+                            >
+                                <Icon type="info-circle" className="tooltip-icon" style={{ marginLeft: '3%' }}/>
+                            </Tooltip>
                         </Form.Item>
                     </Form>
                 </Panel>
             </Collapse>
-            <Link to="/ecochain">
+            <a href="https://ecochain.com/carbon-tax-calculator/" target="_blank" rel="noopener noreferrer">
                 <Button
                     type="primary"
                     size="large"
-                    style={{
-                        width: '100%',
-                        height: '60px',
-                        marginTop: '1%',
-                        bottom: '2%',
-                    }}
+                    style={calcEmissionsButtonStyle}
                 >
                     <b>Calculate your exact emissions</b>
                 </Button>
-            </Link>
+            </a>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
-import {dataGraphProfitNT, dataGraphProfitAT} from '../../../formulas/calculateProfit/calculateProfit'
-import './tables.css'
-import {addCommas} from '../../Utils/addCommas'
+import { dataGraphProfitNT, dataGraphProfitAT } from '../../../formulas/calculateProfit/calculateProfit'
+import { addCommas } from '../../Utils/addCommas'
+import './style.css'
 
 export default function profitTable(props) {
     const noTax = dataGraphProfitNT(
@@ -23,7 +23,7 @@ export default function profitTable(props) {
     )
 
     return (
-        <table class="chart-table">
+        <table className="chart-table">
             <thead>
                 <tr>
                     <th></th>
@@ -38,13 +38,13 @@ export default function profitTable(props) {
                 <tr>
                     <td className="desc-column"><b>Without tax</b></td>
                     {
-                        noTax.map(el => <td>€{addCommas(el)}</td>)
+                        noTax.map(el => <td key={el}>€{addCommas(el)}</td>)
                     }
                 </tr>
                 <tr>
                     <td className="desc-column"><b>After tax</b></td>
                     {
-                        tax.map(el => <td>€{addCommas(el)}</td>)
+                        tax.map(el => <td key={el}>€{addCommas(el)}</td>)
                     }
                 </tr>
                 <tr>
@@ -53,8 +53,8 @@ export default function profitTable(props) {
                             return el - noTax[index]
                         }).map(el => {
                             return el < 0
-                                ? <td className="negative">€{addCommas(el)}</td>
-                                : <td className="positive">€{addCommas(el)}</td>
+                                ? <td className="negative" key={el}>€{addCommas(el)}</td>
+                                : <td className="positive" key={el}>€{addCommas(el)}</td>
                         })
                     } 
                 </tr>

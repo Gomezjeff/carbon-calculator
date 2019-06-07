@@ -3,7 +3,7 @@ import MainChart from './MainChart'
 import TaxOptions from './TaxOptions'
 import SubCharts from './SubCharts'
 import { Checkbox, Tabs } from 'antd'
-import './Results.css'
+import './style.css'
 import { connect } from 'react-redux';
 import OptionsContainer from './OptionsContainer'
 import TextWithTooltip from '../Utils/TextWithTooltip'
@@ -60,7 +60,12 @@ class ResultsContainer extends Component {
                 </div>
                 
                 <div className="chart-container">
-                    <a className="ecochain-cta" href="https://ecochain.com/carbon-tax-calculator/">
+                    <a 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="ecochain-cta" 
+                        href="https://ecochain.com/carbon-tax-calculator/"
+                    >
                         <b>BECOME FUTURE PROOF</b>
                     </a>
                     <Tabs style={{marginTop: '1%'}}>
@@ -180,9 +185,14 @@ class ResultsContainer extends Component {
 
                 </div>
             </div>
-            <a className="ecochain" href="https://ecochain.com/carbon-tax-calculator/">
-                <img src={require('../../assets/ecochain.png')} alt="powered by Ecochain" />
-            </a>
+                <a 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="ecochain" 
+                    href="https://ecochain.com/carbon-tax-calculator/"
+                >
+                    <img src={require('../../assets/ecochain.png')} alt="powered by Ecochain" />
+                </a>
             <footer>
                 <div className="footer">
                     <TextWithTooltip topic='disclaimer' />

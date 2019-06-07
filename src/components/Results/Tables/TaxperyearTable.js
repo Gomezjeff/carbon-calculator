@@ -1,7 +1,7 @@
 import React from 'react'
-import {dataGraphCO2Tax} from '../../../formulas/calculateProfit/calculateProfit'
-import './tables.css'
-import {addCommas} from '../../Utils/addCommas'
+import { dataGraphCO2Tax } from '../../../formulas/calculateProfit/calculateProfit'
+import { addCommas } from '../../Utils/addCommas'
+import './style.css'
 
 export default function TaxperyearTable(props) {
     const perYear = dataGraphCO2Tax(
@@ -32,7 +32,7 @@ export default function TaxperyearTable(props) {
                     <td className="desc-column"><b>Tax per year</b></td>
                     {
                         perYear.map(el => {
-                            return <td>€{addCommas(el)}</td>
+                            return <td key={el}>€{addCommas(el)}</td>
                         })
                     }
                 </tr>
