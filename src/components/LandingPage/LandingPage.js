@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'antd'
-import './LandingPage.css'
+import './style.css'
 
 export default class LandingPage extends Component {
     render() {

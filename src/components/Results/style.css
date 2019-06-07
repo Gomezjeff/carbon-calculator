@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: baseline;
     margin: 2%;
+    animation: 0.5s fadeIn;
 }
 
 .profit-chart {

@@ -8,6 +8,7 @@
     color: #3D7A9B;
     min-height: 500px;
     margin-top: 7%;
+    animation: 1s fadeIn;
 }
 
 .landing-page button {
