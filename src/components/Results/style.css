@@ -78,8 +78,7 @@
     margin: 1%;
 }
 
-.infoStyle{
-    /* position: absolute; */
+.infoStyle {
     display: flex;
     align-self: left;
     font-size: 125%;
@@ -119,4 +118,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.ant-form-item-control-wrapper, .scope-options {
+    width: 100%;
 }

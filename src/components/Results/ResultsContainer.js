@@ -3,7 +3,7 @@ import MainChart from './MainChart'
 import TaxOptions from './TaxOptions'
 import SubCharts from './SubCharts'
 import { Checkbox, Tabs } from 'antd'
-import './Results.css'
+import './style.css'
 import { connect } from 'react-redux';
 import OptionsContainer from './OptionsContainer'
 import TextWithTooltip from '../Utils/TextWithTooltip'

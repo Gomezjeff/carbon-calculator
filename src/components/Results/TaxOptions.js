@@ -11,7 +11,7 @@ export default function TaxOptions(props) {
             </div>
             <h2>CO<sub>2</sub> Tax</h2>
             <div className="tax-slider-container">
-                <p>CO2 tax per ton</p>
+                <b>CO2 tax per ton</b>
                 <Slider
                     value={props.values.euroPerTon}
                     min={0}
