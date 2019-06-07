@@ -180,9 +180,14 @@ class ResultsContainer extends Component {
 
                 </div>
             </div>
-            <a target="_blank" className="ecochain" href="https://ecochain.com/carbon-tax-calculator/">
-                <img src={require('../../assets/ecochain.png')} alt="powered by Ecochain" />
-            </a>
+                <a 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="ecochain" 
+                    href="https://ecochain.com/carbon-tax-calculator/"
+                >
+                    <img src={require('../../assets/ecochain.png')} alt="powered by Ecochain" />
+                </a>
             <footer>
                 <div className="footer">
                     <TextWithTooltip topic='disclaimer' />
