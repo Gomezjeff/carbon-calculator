@@ -27,7 +27,7 @@ export const reductionInfo = {
 export const emissionsInput = {
     emissionsKnown: 'Yes',
     S1emissions: 701020,
-    S1reductionTarget: 100,
+    S1reductionTarget: 0,
     S2emissions: 701020,
     S2reductionTarget: 0,
     S3emissions: 12618360,

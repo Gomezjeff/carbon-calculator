@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Line} from 'react-chartjs-2'
 import {optionsEuro} from './chartOptions'
-import {dataGraphProfitNT, dataGraphProfitAT} from '../../formulas/calculateProfit/calculateProfit'
+import {dataGraphProfitNT, dataGraphProfitAT, dataGraphProfitNoReduction} from '../../formulas/calculateProfit/calculateProfit'
 import TextWithTooltip from '../Utils/TextWithTooltip'
 import '../Utils/styles.css'
 
@@ -46,7 +46,23 @@ export default class MainChart extends Component {
                                     backgroundColor: "rgba(69, 168, 72, 0.3)",
                                     pointBackgroundColor:  "rgba(69, 168, 72, 0.8)",
                                     borderColor: "rgba(69, 168, 72, 0.8)"
-                                }
+                                },
+                                {
+                                    label: "Profit without reduction",
+                                    data: dataGraphProfitNoReduction(
+                                        this.props.companyData,
+                                        this.props.taxScope,
+                                        this.props.taxInfo,
+                                        this.props.emissionData,
+                                        5,
+                                        "profitAT",
+                                        "cumulativeProfitAT",
+                                        this.props.cumulative
+                                    ),
+                                    backgroundColor: "rgba(224, 22, 22, 0.3)",
+                                    pointBackgroundColor: "rgb(224, 22, 22, 0.8)",
+                                    borderColor: "rgb(224, 22, 22, 0.8)"
+                                },
                             ]
                         }
                     }
