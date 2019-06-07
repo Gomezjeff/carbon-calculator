@@ -11,7 +11,7 @@ export default function CompanyInfoForm(props) {
             <h2>Company Information</h2>
             <Form layout='inline'>
                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: '30%' }}>
-                    <label>Industry</label><br />
+                    <label><b>Industry</b></label><br />
                     <Select 
                         placeholder="Select industry" 
                         value={props.values.industry}
@@ -21,7 +21,7 @@ export default function CompanyInfoForm(props) {
                     </Select>
                 </Form.Item>
                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: '30%' }}>
-                    <label>Annual Turnover (Euro's)</label>
+                    <label><b>Annual Turnover (Euro's)</b></label>
                     <NumericInput 
                         maxLength={16}
                         placeholder="Fill in your revenue" 
@@ -32,7 +32,7 @@ export default function CompanyInfoForm(props) {
                     />
                 </Form.Item>
                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: '30%' }}>
-                    <label>Annual Turnover Growth (%)</label>
+                    <label><b>Annual Turnover Growth (%)</b></label>
                     <Slider
                         style={{ width: '250px' }}
                         value={props.values.turnoverGrowth} 
@@ -46,7 +46,7 @@ export default function CompanyInfoForm(props) {
             </Form>
             <Form layout='inline' style={{ marginTop: '3%' }}>
                 <Form.Item wrapperCol={{ sm: 24 }} style={{ width: '30%' }}>
-                    <label>What is your overall profit margin (%)</label>
+                    <label><b>What is your overall profit margin (%)</b></label>
                     <Slider
                         value={props.values.profitMargin} 
                         onChange={e => props.onChange(e, 'profitMargin')}

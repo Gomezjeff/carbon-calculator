@@ -7,8 +7,8 @@ export default function MarketInfoForm(props) {
     return (
         <div className="form-container" onSubmit={props.onSubmit}>
             <h2>Market Information</h2>
-            <Form>
-                <Form.Item style={{width: '100%'}} wrapperCol={{ sm: 12 }}>
+            <Form layout="inline">
+                <Form.Item style={{width: '45%'}} wrapperCol={{ sm: 12 }}>
                     <TextWithTooltip topic='elasticity'/>
                     <Slider
                         style={{width: '65%'}}
@@ -20,7 +20,7 @@ export default function MarketInfoForm(props) {
                         marks={elasticityMarks}
                     />
                 </Form.Item>
-                <Form.Item style={{width: '100%'}} colon={false} wrapperCol={{ sm: 12 }}>
+                <Form.Item style={{width: '45%'}} colon={false} wrapperCol={{ sm: 12 }}>
                     <TextWithTooltip topic='taxToCustomer'/>
                     <Slider
                         style={{width: '65%'}}
