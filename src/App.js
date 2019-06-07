@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/step-2" component={EmissionsContainer} />
             <Route exact path="/results" component={ResultsContainer} />
         </div>
-    );
+    )
 }
 
 export default App;

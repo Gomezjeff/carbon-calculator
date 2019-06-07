@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Radio, message } from 'antd'
 import PageHeader from '../PageHeader'
 import EmissionsForm from './EmissionsForm'
+import Progress from '../Utils/Progress'
 import { calculateEmissions } from '../../formulas/calculateEmissions/calculateEmissions'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
@@ -68,6 +69,7 @@ class EmissionsContainer extends Component {
             return (
                 <div className="container">
                     <PageHeader />
+                    <Progress step={1} />
                     <div className="knows-emissions">
                         <h2>Company CO<sub>2</sub> Emissions</h2>
                         Do you know your company CO<sub>2</sub> emissions?

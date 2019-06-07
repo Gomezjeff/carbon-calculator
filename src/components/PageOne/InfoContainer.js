@@ -6,9 +6,13 @@ import MarketInfoForm from './MarketInfoForm'
 import { submitInputOne } from '../../actions/input'
 import PageHeader from '../PageHeader'
 import './style.css'
+import Progress from '../Utils/Progress';
 
 class InfoContainer extends Component {
-    state = this.props.pageOneInput
+    state = {
+        ...this.props.pageOneInput,
+        loading: true
+    }
 
     onChange = (data, target) => {
         this.setState({ [target]: data })
@@ -29,6 +33,7 @@ class InfoContainer extends Component {
         return (
             <div className="info container">
                 <PageHeader />
+                <Progress step={0} />
                 <CompanyInfoForm values={this.state} onChange={this.onChange} />
                 <MarketInfoForm values={this.state} onChange={this.onChange} />
                 <button onClick={this.onSubmit} className="continue-button"> Continue </button>
