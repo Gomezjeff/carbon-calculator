@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
+import { Radio, message } from 'antd'
 import PageHeader from '../PageHeader'
 import EmissionsForm from './EmissionsForm'
 import { calculateEmissions } from '../../formulas/calculateEmissions/calculateEmissions'
-import './EmissionsContainer.css'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import { submitInputTwo } from '../../actions/input'
-import { Radio, message } from 'antd'
+import './style.css'
 
 class EmissionsContainer extends Component {
     state = this.props.pageTwoInput

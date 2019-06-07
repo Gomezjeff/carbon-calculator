@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Line } from 'react-chartjs-2'
-import { options } from './chartOptions'
+import { options } from '../../lib/chartOptions'
 import { dataGraphTaxableEmissions } from '../../formulas/calculateProfit/calculateProfit'
 import TextWithTooltip from '../Utils/TextWithTooltip';
 

@@ -3,39 +3,11 @@ import { Collapse, Slider, Select, Form, Button, Radio } from 'antd'
 import NumericInput from '../Utils/NumericInput'
 import { industry } from '../../lib/industry'
 import TextWithTooltip from '../Utils/TextWithTooltip'
+import { formStyle, collapseStyle, panelStyle, emissionStyle, rtStyle, calcEmissionsButtonStyle} from '../../lib/styleObjects'
 import './Results.css'
 
 const Panel = Collapse.Panel
 const Option = Select.Option
-
-const panelStyle = {
-    background: 'rgba(255, 255, 255, 0.64)',
-    border: '0'
-}
-
-const collapseStyle = {
-    background: 'rgba(255, 255, 255, 0.64)',
-    border: '0',
-    fontSize: '130%',
-    textAlign: 'center',
-    margin: '10px 0',
-    borderRadius: '0'
-}
-
-const formStyle = {
-    width: '90%',
-    maxWidth: '400px',
-    margin: 'auto',
-}
-
-const emissionStyle = {
-    width: '60%',
-    margin: '5%'
-}
-
-const rtStyle = {
-    width: '30%',
-}
 
 const percs = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
@@ -216,12 +188,7 @@ export default function OptionsPanel(props) {
                 <Button
                     type="primary"
                     size="large"
-                    style={{
-                        width: '100%',
-                        height: '60px',
-                        marginTop: '1%',
-                        bottom: '2%',
-                    }}
+                    style={calcEmissionsButtonStyle}
                 >
                     <b>Calculate your exact emissions</b>
                 </Button>
