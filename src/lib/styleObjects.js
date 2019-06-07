@@ -39,6 +39,7 @@ export const collapseStyle = {
 export const formStyle = {
     width: '90%',
     margin: 'auto',
+    textAlign: 'left'
 }
 
 export const emissionStyle = {

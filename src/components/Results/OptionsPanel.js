@@ -87,7 +87,7 @@ export default function OptionsPanel(props) {
                 <Panel header={`Change your CO\u2082 emissions`} style={panelStyle}>
                     <TextWithTooltip topic='emissions' className='infoStyle' />
                     <Form style={formStyle} layout="inline">
-                        <Form.Item>
+                        <Form.Item style={{ textAlign: 'center', margin: 'auto' }} className="scope-options">
                             <label>Do you know your emissions?</label>
                             <Radio.Group 
                                 value={props.values.emissionsKnown} 
