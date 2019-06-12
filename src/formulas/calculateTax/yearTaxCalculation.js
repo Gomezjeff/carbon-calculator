@@ -74,7 +74,6 @@ const turnoverTaxCalculator = (turnover, turnoverGrowth, taxInfo, years) => {
             }
         }
     }
-
     return taxYears
 }
 
@@ -90,7 +89,7 @@ const reducedEmissionsCalculator = (emissions, reduction, year, years, turnoverG
         const yearReduction = (year - 1) / (years - 1)
         let scopeEmissions;
         if(reduction[scope] === 0 || !isReduced ) {
-            scopeEmissions = values[i] + values[i] * (turnoverGrowth / 100) * yearReduction
+            scopeEmissions = values[i] * ((1 + (turnoverGrowth / 100))**(year-1))
         } else {
             scopeEmissions = values[i] - values[i] * reduction[scope] * yearReduction
         }
