@@ -11,6 +11,7 @@ export default function profitTable(props) {
         "cumulative",
         props.cumulative
     )
+
     const tax = dataGraphProfitAT(
         props.companyData, 
         props.taxScope, 
@@ -36,7 +37,7 @@ export default function profitTable(props) {
             </thead>
             <tbody>
                 <tr>
-                    <td className="desc-column"><b>Without tax</b></td>
+                    <td className="desc-column"><b>Before tax</b></td>
                     {
                         noTax.map((el, i) => <td key={i}>€{addCommas(el)}</td>)
                     }
@@ -53,8 +54,8 @@ export default function profitTable(props) {
                             return el - noTax[index]
                         }).map((el, i) => {
                             return el < 0
-                                ? <td className="negative" key={i}>€{addCommas(el)}</td>
-                                : <td className="positive" key={i}>€{addCommas(el)}</td>
+                                ? <td className="negative" key={i}>€{addCommas(el.toFixed(2))}</td>
+                                : <td className="positive" key={i}>€{addCommas(el.toFixed(2))}</td>
                         })
                     } 
                 </tr>

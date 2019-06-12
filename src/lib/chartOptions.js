@@ -1,4 +1,14 @@
 export const optionsEuro = {
+    tooltips: {
+        mode: 'label',
+        callbacks: {
+            label: function (tooltipItem, data) {
+                let label = data.datasets[tooltipItem.datasetIndex].label;
+                let value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                return [`${label}: €${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`];
+            },
+        },
+    },
     maintainAspectRatio: false,
     legend: {
         labels: {
@@ -20,6 +30,16 @@ export const optionsEuro = {
 }
 
 export const options = {
+    tooltips: {
+        mode: 'label',
+        callbacks: {
+            label: function (tooltipItem, data) {
+                let label = data.datasets[tooltipItem.datasetIndex].label;
+                let value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                return [`${label}: ${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} tons CO\u2082`];
+            },
+        },
+    },
     maintainAspectRatio: false,
     legend: {
         labels: {

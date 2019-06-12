@@ -59,7 +59,7 @@ const turnoverWithTaxes = (companyInfo, yearValues, yearArray) => {
         const turnover = year === 1 ? yearValues[year].newTurnover : yearValues[year].turnover
 
         // Calculate the profit for a given year before taxes
-        const profitBT = turnover * profitMargin / 100
+        const profitBT = yearValues[year].newTurnover * profitMargin / 100
 
         // Calculate the cumulative profit for the given interval
         const cumulativeProfitBT = year > 1 ?
