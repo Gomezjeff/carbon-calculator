@@ -31,8 +31,8 @@ export default function TaxperyearTable(props) {
                 <tr>
                     <td className="desc-column"><b>Tax per year</b></td>
                     {
-                        perYear.map(el => {
-                            return <td key={el}>€{addCommas(el)}</td>
+                        perYear.map((el, i) => {
+                            return <td key={i}>€{addCommas(el)}</td>
                         })
                     }
                 </tr>
