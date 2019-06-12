@@ -20,7 +20,7 @@ class ResultsContainer extends Component {
         taxGrowth: 10, // percentage,
         checked: ['Scope 1', 'Scope 2', 'Scope 3'],
         taxScope: { scope1: true, scope2: true, scope3: true },
-        cumulative: true
+        cumulative: false
     }
 
     onChange = (data, target) => {

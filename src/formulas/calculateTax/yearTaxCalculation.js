@@ -1,4 +1,5 @@
 // import { companyInfo, taxInfo, taxScope, reductionInfo, emissionsInput } from '../../lib/sampleCompany'
+import { calculateEmissions } from '../calculateEmissions/calculateEmissions'
 
 // SCOPE EMISSIONS CALCULATOR DONE
 const scopeEmissionsCalculator = (emissions, taxScope) => {
@@ -26,7 +27,7 @@ const turnoverCalculator = (turnover, companyInfo, taxYear, scopeEmissions, year
     const totalTax = taxYear * totalTons
 
     const dTurnover = ((totalTax * taxToCustomer / 100) / turnover) * elasticity
-    const newQ = turnover * (1 + dTurnover)
+    const newQ = (turnover / oldP) * (1 + dTurnover)
     const newP = oldP * (1 + (totalTax * taxToCustomer / 100) / turnover)
     const newTurnover = newQ * newP
 
@@ -74,12 +75,11 @@ const turnoverTaxCalculator = (turnover, turnoverGrowth, taxInfo, years) => {
             }
         }
     }
-
     return taxYears
 }
 
 // REDUCED EMISSIONS CALCULATOR DONE
-const reducedEmissionsCalculator = (emissions, reduction, year, years, turnoverGrowth, isReduced) => {
+const reducedEmissionsCalculator = (emissions, reduction, year, years, turnoverForecast, isReduced, industry) => {
     const scopes = ['scope1', 'scope2', 'scope3']
     const values = Object.values(emissions)
     const reducedEmissions = {}
@@ -90,7 +90,19 @@ const reducedEmissionsCalculator = (emissions, reduction, year, years, turnoverG
         const yearReduction = (year - 1) / (years - 1)
         let scopeEmissions;
         if(reduction[scope] === 0 || !isReduced ) {
-            scopeEmissions = values[i] + values[i] * (turnoverGrowth / 100) * yearReduction
+            switch(i) {
+            case 0:
+                scopeEmissions = calculateEmissions(industry, turnoverForecast[year].newTurnover).S1emissions
+                break;
+            case 1:
+                scopeEmissions = calculateEmissions(industry, turnoverForecast[year].newTurnover).S2emissions
+                break;
+            case 2:
+                scopeEmissions = calculateEmissions(industry, turnoverForecast[year].newTurnover).S3emissions
+                break;
+            default: 
+                break;
+            }
         } else {
             scopeEmissions = values[i] - values[i] * reduction[scope] * yearReduction
         }
@@ -132,7 +144,7 @@ export const calculateAnnualValues = (companyInfo, taxScope, taxInfo, emissionsI
             mergedCalculations[year] = turnover
             turnoverForecast = turnoverTaxCalculator(turnover.newTurnover, turnoverGrowth, taxInfo, 5)
         } else {
-            const emissions = reducedEmissionsCalculator(baseEmissions, reductionInfo, year, years, companyInfo.turnoverGrowth, isReduced)
+            const emissions = reducedEmissionsCalculator(baseEmissions, reductionInfo, year, years, turnoverForecast, isReduced, companyInfo.industry)
             const taxEm = scopeEmissionsCalculator(emissions, taxScope)
             const taxY = turnoverForecast[year].euroPerTon
             const turnForecY = turnoverForecast[year].newTurnover
@@ -141,6 +153,5 @@ export const calculateAnnualValues = (companyInfo, taxScope, taxInfo, emissionsI
             mergedCalculations[year] = turnover
         }
     }
-    
     return mergedCalculations
 }

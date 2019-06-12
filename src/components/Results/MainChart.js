@@ -19,7 +19,7 @@ export default class MainChart extends Component {
                             datasets:
                             [
                                 {
-                                    label: "Profit without tax ",
+                                    label: "Before tax ",
                                     data: dataGraphProfitNT(
                                         this.props.companyData, 
                                         5, 
@@ -32,7 +32,7 @@ export default class MainChart extends Component {
                                     borderColor: "rgba(101, 188, 162, 0.8)"
                                 },
                                 {
-                                    label: "Profit after tax ",
+                                    label: "After tax ",
                                     data: dataGraphProfitAT(
                                         this.props.companyData, 
                                         this.props.taxScope, 
@@ -48,7 +48,7 @@ export default class MainChart extends Component {
                                     borderColor: "rgba(69, 168, 72, 0.8)"
                                 },
                                 {
-                                    label: "Profit without reduction targets ",
+                                    label: "After tax - No reduction targets",
                                     data: dataGraphProfitNoReduction(
                                         this.props.companyData,
                                         this.props.taxScope,

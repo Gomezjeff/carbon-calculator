@@ -173,7 +173,7 @@ export const labels = {
         text: 'Profit per year',
         message:
             <div>
-                <p>This graph displayes the total amount profit per year for your company before and after the CO<sub>2</sub> tax is deducted.</p>
+                <p>This graph displays the total amount of profit per year for your company. The first line (turquoise) indicates your profit without carbon tax. The second line (green) shows your profit after carbon tax and includes your reduction targets (if any). The last (red) line shows your profit after carbon tax when you don’t have any reduction targets set for your emissions.</p>
             </div>
     },
     reduction: {
